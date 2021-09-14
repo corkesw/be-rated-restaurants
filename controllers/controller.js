@@ -1,5 +1,5 @@
-const app = require ('./app')
-const {fetchRestaurants} = require('./model')
+const app = require ('../app')
+const {fetchRestaurants} = require('../models/model')
 
 exports.message = (req, res) => {
     //console.log("Controller check>>>>>>>")

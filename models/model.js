@@ -1,4 +1,3 @@
-const { getRestaurants } = require('./controllers')
 const db = require('../db')
 
 exports.fetchRestaurants = () => {

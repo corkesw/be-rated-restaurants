@@ -4,7 +4,7 @@
   "description": "## A micro [yelp](https://www.yelp.co.uk/c/manchester/restaurants) clone API using Express and SQL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "psql -f ./db/seed-test.sql && jest",
     "seed-dev": "psql -f ./db/seed-dev.sql"
   },
   "repository": {
@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/northcoders/be-rated-restaurants/issues"
   },
-  "homepage": "https://github.com/northcoders/be-rated-restaurants#readme"
+  "homepage": "https://github.com/northcoders/be-rated-restaurants#readme",
+  "keywords": [],
+  "devDependencies": {
+    "jest": "^27.2.0",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  }
 }
