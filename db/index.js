@@ -7,7 +7,7 @@ require('dotenv')
 .config( {
     path: `${__dirname}/../.env.${ENV}`,
 })
-//console.log(process.env, ">>>>>>>>>>>>>>>>>>>>")
+
 
 const db = new Pool()
 

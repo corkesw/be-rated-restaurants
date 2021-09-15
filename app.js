@@ -1,18 +1,23 @@
-const express = require ('express')
-const { message, getRestaurants } = require ('./controllers/controller.js')
+const express = require("express");
+const apiRouter = require('./routes/api.router')
+const {
+  getRestaurants,
+  postRestaurant,
+  deleteRestaurant
+} = require("./controllers/controller.js");
+const { handleInvalidPath, handlePsqlErrors, handleCustomErrors, handleServerErrors } = require("./errors/errors.js");
 
-//console.log(message)
-const app = express()
+const app = express();
 
-app.get('/api', message)
+app.use(express.json());
 
-app.get('/api/restaurants', getRestaurants)
+app.use('/api', apiRouter);
+
+app.all("*", handleInvalidPath);
+
+app.use(handleCustomErrors)
+app.use(handlePsqlErrors)
+app.use(handleServerErrors)
 
 
-
-
-
-
-
-
-module.exports = app
+module.exports = app;
